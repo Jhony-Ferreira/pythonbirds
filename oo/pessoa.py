@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=32):
         self.nome = nome
         self.idade = idade
@@ -21,6 +23,11 @@ if __name__ == '__main__':
     #print(zegrilo.filhos)  #imprime o nome da classe seguido do objeto ID e não o atributo filhos dentro do objeto
     zegrilo.sobrenome = 'Ferreira'
     del zegrilo.filhos
+    zegrilo.olhos = 1
+    del zegrilo.olhos
     print(zegrilo.sobrenome)
     print(zegrilo.__dict__)
     print(jhony.__dict__)
+    print(Pessoa.olhos)
+    print(jhony.olhos)
+    print(zegrilo.olhos)

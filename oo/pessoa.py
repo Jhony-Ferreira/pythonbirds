@@ -1,17 +1,21 @@
 class Pessoa:
-    def __init__(self, nome=None, idade=32):
+    def __init__(self, *filhos, nome=None, idade=32):
         self.nome = nome
         self.idade = idade
+        self.filhos = list(filhos)
 
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+
 if __name__ == '__main__':
-    p = Pessoa('Luciano')
-    print(Pessoa.cumprimentar(p))
-    print(id(p))
-    print(p.cumprimentar())
-    print(p.nome)
-    p.nome = 'Jhony'
-    print(p.nome)
-    print(p.idade)
+    jhony = Pessoa(nome='Jhony')
+    zegrilo = Pessoa(jhony, nome='zegrilo')
+    print(Pessoa.cumprimentar(zegrilo))
+    print(id(zegrilo))
+    print(zegrilo.cumprimentar())
+    print(zegrilo.nome)
+    print(zegrilo.idade)
+    for filho in zegrilo.filhos:
+        print(filho.nome)
+    #print(zegrilo.filhos)  #imprime o nome da classe seguido do seu ID e não o atributo filhos dentro do objeto

@@ -18,4 +18,9 @@ if __name__ == '__main__':
     print(zegrilo.idade)
     for filho in zegrilo.filhos:
         print(filho.nome)
-    #print(zegrilo.filhos)  #imprime o nome da classe seguido do seu ID e não o atributo filhos dentro do objeto
+    #print(zegrilo.filhos)  #imprime o nome da classe seguido do objeto ID e não o atributo filhos dentro do objeto
+    zegrilo.sobrenome = 'Ferreira'
+    del zegrilo.filhos
+    print(zegrilo.sobrenome)
+    print(zegrilo.__dict__)
+    print(jhony.__dict__)
